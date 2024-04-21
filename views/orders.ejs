@@ -1,0 +1,83 @@
+<style>
+  td {
+    font-size: 25px;
+    width: 2%;
+    text-align: center;
+  }
+
+  p {
+    margin: 8px;
+  }
+
+  button {
+    font-size: 20px;
+    padding: 10px;
+    border-radius:18px;
+  }
+
+</style>
+<div>
+  <h2>Your Orders</h2>
+  <% let amount=0,flag=0 %>
+
+    <table>
+      <tr>
+        <td><b>Image</b></td>
+        <td><b>Description</b></td>
+        <td><b>Quantity</b></td>
+        <td><b>Total</b></td>
+        <td><b>Cancel</b></td>
+      </tr>
+    </table>
+
+    <table>
+      <% Object.keys(orders).forEach(function(prop) { %>
+        <tr>
+          <!-- <% var name = orders[prop].name; %> -->
+          <!-- <%- `../assests/images/price list/${name}.png`  %> -->
+          <td>
+            <img src="<%= `../assests/images/price list/${name}.png` %>" alt="">
+          </td>
+
+          <td>
+            <% value=orders[prop].price %>
+            <% qty=orders[prop].qty %>
+            <p><%- 'Order Name : ' %><%- orders[prop].name %></p>
+            <p><%- 'Price : ' %><%- orders[prop].price %></p>
+          </td>
+
+          <td>
+            <p><%- orders[prop].qty %></p>
+          </td>
+
+          <td>
+            <% amount=amount + value*qty %>
+            <p><%- value*qty %></p>
+          </td>
+
+          <td>
+            <a href="<%= `/delete_order/?id=${orders[prop].id}` %>"><button>Delete</button></a>
+          </td>
+        </tr>
+        <% }); %>
+    </table>
+
+    <p style="font-size: 30px;"><%- 'Total Amount : ' %><%- amount %></p>
+
+    <a href="<%= `/pay/?amount=${amount}` %>">
+      <button style="width: 30%;height: 10%;font-size: 30px;background: cyan;margin: 25px 0px 0px 0px">Pay</button>
+    </a>
+
+    <!-- <p style="font-size: 30px;"><b>Next Day Delivery : Will take Rs 200 Extra</b></p> -->
+
+    <!-- <a href="<%= `/pay/?amount=${amount+200}` %>">
+      <button style="width: 30%;height: 10%;font-size: 30px;background: cyan;margin: 25px 0px 0px 0px">To get Next day
+        Delivery</button>
+    </a> -->
+
+    <a href="#">
+      <button style="width: 30%;height: 10%;font-size: 30px;background: cyan;margin: 25px 0px 0px 0px">Cash On Delivery</button>
+    </a>
+
+
+</div>

@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>
+        <%= title %>
+    </title>
+    <style>
+        /* navbar */
+        * {
+            margin: 0%;
+            padding: 0px;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            height: 100px;
+        }
+
+        li {
+            list-style: none;
+            margin: auto;
+            text-align: center;
+        }
+
+        a {
+            font-size: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-decoration: none;
+            color: #551A8B;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            border: 0px solid;
+            background-color: #ed1c94;
+            border-radius: 25px;
+            padding: 15px;
+        }
+
+        .dropbtn {
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* footer */
+        .secondul a {
+            color: white;
+            font-size: 22px;
+        }
+
+        .secondul a:hover {
+            color: rgb(93, 93, 234);
+            text-decoration: none;
+        }
+
+        .last {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            font-size: 23px;
+            margin-top: 80px;
+            width: 100px;
+            height: fit-content;
+        }
+
+        .last li {
+            margin: 5px;
+            text-align: left;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            margin: 0px 0px 20px 0px;
+        }
+
+        /* maps  */
+        .image {
+            position: relative;
+            width: 400px;
+        }
+
+        .image__img {
+            display: block;
+            width: 100%;
+        }
+
+        .image__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgb(0, 0, 0, 0.6);
+            color: #ffffff;
+            font-family: 'Quicksand', sang-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+
+        .image__overlay>* {
+            transform: translateY(20px);
+            transition: transform 0.25s;
+        }
+
+        .image__overlay:hover>* {
+            transform: translateY(0);
+        }
+
+        .image__overlay:hover {
+            opacity: 1;
+        }
+
+        .image__title {
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .last_title {
+            font-size: 2em;
+            font-weight: bold;
+            margin-left: 30px;
+        }
+
+        .image__description {
+            font-size: 0.75cm;
+            margin-top: 0.25cm;
+        }
+
+        .gallery-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 570px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            overflow: hidden;
+            width: 100.1%;
+            -webkit-mask-image: -webkit-radial-gradient(white, #000)
+        }
+
+        .gallery-item>* {
+            width: 100%
+        }
+
+        .gallery-item figure {
+            width: 100%;
+            transition: .55s all ease-in-out
+        }
+
+        .gallery-item img {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            height: auto;
+            max-width: none;
+            min-width: 101.5%
+        }
+
+        .gallery-item .caption {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            transition: .33s all ease-in-out;
+            pointer-events: none;
+            background: rgba(0, 0, 0, .7)
+        }
+
+        .gallery-item .caption>* {
+            pointer-events: auto;
+            position: relative;
+            z-index: 2
+        }
+
+        .gallery-item .caption:before {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform-origin: 0 100%;
+            transform: rotate(45deg);
+            content: "";
+            display: inline-block;
+            width: 100px;
+            height: 160px;
+            background-color: #ed1c94
+        }
+
+        .gallery-item .caption:after {
+            position: absolute;
+            bottom: 0;
+            right: 10px;
+            content: '\f2c5';
+            font-family: "Material Design Icons";
+            font-size: 36px;
+            color: #fff
+        }
+
+        .gallery-item .caption-text,
+        .gallery-item .caption-title {
+            color: #fff
+        }
+
+        .gallery-item .caption-title {
+            position: relative;
+            font-size: 24px;
+            line-height: 1.25;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            font-family: Oswald, Helvetica, Arial, sans-serif;
+            font-weight: 400
+        }
+
+        .gallery-item .caption-text {
+            max-width: 100%;
+            margin-top: 25px;
+            padding: 0 15px;
+            color: #fff;
+            opacity: .6
+        }
+
+        #centimg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #centimg img {
+            width: 95%;
+        }
+
+        #centimg div {
+            display: inline-block;
+            width: 260px
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<body>
+
+    <div style="background-color:rgb(250,250,250);height: 100px;">
+        <ul>
+            <li><img src="/assests/images/logo.png" alt="" style="width: 100%;"></li>
+            <!-- <li><a href="/offer">OFFERS</a></li> -->
+            <li><a href="/price_lists">PRICE LISTS</a></li>
+            <li><a href="/store_locator">STORE LOCATER</a></li>
+            <li><a href="/team">TEAM</a></li>
+            <li><a href="/franchisee">FRANCHISEE</a></li>
+            <li><button><a href="/ScheduleWash" style="text-decoration:none">SCHEDULE A WASH</a></button></li>
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="" style="text-decoration:none">LOGIN/REGISTER</a></button>
+                    <div class="dropdown-content">
+                        <a href="/login">LOGIN</a>
+                        <a href="/register">REGISTER</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h2 style="margin-top: 20px;text-align: center;font-size: 80px;"> STORE LOCATION</h2>
+    </div>
+
+    <div style="display: flex;justify-content: space-around;margin-top: 20px;">
+        <button style="width:15%;font-size:24px;">ALL CATEGORIES</button>
+        <button style="width:15%;font-size:24px;">INDIA East</button>
+        <button style="width:15%;font-size:24px;">INDIA North</button>
+        <button style="width:15%;font-size:24px;">INDIA South</button>
+        <button style="width:15%;font-size:24px;">INDIA West</button>
+    </div>
+
+    <div class="centimg" style="margin-top: 20px;">
+        <div style="display:inline-block;width:610px" data-filter="indiaeast">
+            <a class="gallery-item" href="https://www.google.com/maps/search/?api=1&query=12.93303195,77.74285014"
+                target="_blank">
+                <div class="image">
+                    <img src="../assests/images/place-holder-store-locator.png" class="image__img">
+                    <div class="image__overlay ">
+                        <div class="image__title">KOLKATA</div>
+                        <p class="image__description">
+                            26/27, Opposite KK School and Mayura bakery, Varthur Rd,
+                            Whitefield, Bengaluru<br>
+                            9982947008 </p>
+                    </div>
+                </div>
+                <div class="last_title"><a href="javascript:void(0)">KOLKATA</a></div>
+            </a>
+        </div>
+        <div style="display:inline-block;width:610px" data-filter="indiaeast">
+            <a class="gallery-item" href="https://www.google.com/maps/search/?api=1&query=12.93303195,77.74285014"
+                target="_blank">
+                <div class="image">
+                    <img src="../assests/images/place-holder-store-locator.png" class="image__img">
+                    <div class="image__overlay ">
+                        <div class="image__title">PTANA</div>
+                        <p class="image__description">
+                            26/27, Opposite KK School and Mayura bakery, Varthur Rd,
+                            Whitefield, Bengaluru<br>
+                            9982947008 </p>
+                    </div>
+                </div>
+                <div class="last_title"><a href="javascript:void(0)">PTANA</a></div>
+            </a>
+        </div>
+        <div style="display:inline-block;width:610px" data-filter="indiaeast">
+            <a class="gallery-item" href="https://www.google.com/maps/search/?api=1&query=12.93303195,77.74285014"
+                target="_blank">
+                <div class="image">
+                    <img src="../assests/images/place-holder-store-locator.png" class="image__img">
+                    <div class="image__overlay ">
+                        <div class="image__title">BHUBANESHWER</div>
+                        <p class="image__description">
+                            26/27, Opposite KK School and Mayura bakery, Varthur Rd,
+                            Whitefield, Bengaluru<br>
+                            9982947008 </p>
+                    </div>
+                </div>
+                <div class="last_title"><a href="javascript:void(0)">BHUBANESHWER</a></div>
+            </a>
+        </div>
+        <div style="display:inline-block;width:610px" data-filter="indiasouth">
+            <a class="gallery-item" href="https://www.google.com/maps/search/?api=1&query=12.93303195,77.74285014"
+                target="_blank">
+                <div class="image">
+                    <img src="../assests/images/place-holder-store-locator.png" class="image__img">
+                    <div class="image__overlay ">
+                        <div class="image__title">CHENNAI/div>
+                        <p class="image__description">
+                            26/27, Opposite KK School and Mayura bakery, Varthur Rd,
+                            Whitefield, Bengaluru<br>
+                            9982947008 </p>
+                    </div>
+                </div>
+                <div class="last_title"><a href="javascript:void(0)">CHENNAI</a></div>
+            </a>
+        </div>
+        <div style="display:inline-block;width:610px" data-filter="indiasouth">
+            <a class="gallery-item" href="https://www.google.com/maps/search/?api=1&query=12.93303195,77.74285014"
+                target="_blank">
+                <div class="image">
+                    <img src="../assests/images/place-holder-store-locator.png" class="image__img">
+                    <div class="image__overlay ">
+                        <div class="image__title">BENGALORE</div>
+                        <p class="image__description">
+                            26/27, Opposite KK School and Mayura bakery, Varthur Rd,
+                            Whitefield, Bengaluru<br>
+                            9982947008 </p>
+                    </div>
+                </div>
+                <div class="last_title"><a href="javascript:void(0)">BENGALORE</a></div>
+            </a>
+        </div>
+        <div style="display:inline-block;width:610px" data-filter="indiasouth">
+            <a class="gallery-item" href="https://www.google.com/maps/search/?api=1&query=12.93303195,77.74285014"
+                target="_blank">
+                <div class="image">
+                    <img src="../assests/images/place-holder-store-locator.png" class="image__img">
+                    <div class="image__overlay ">
+                        <div class="image__title">HYDRABAD</div>
+                        <p class="image__description">
+                            26/27, Opposite KK School and Mayura bakery, Varthur Rd,
+                            Whitefield, Bengaluru<br>
+                            9982947008 </p>
+                    </div>
+                </div>
+                <div class="last_title"><a href="javascript:void(0)">HYDRABAD</a></div>
+            </a>
+        </div>
+        <div style="display:inline-block;width:610px" data-filter="indianorth">
+            <a class="gallery-item" href="https://www.google.com/maps/search/?api=1&query=12.93303195,77.74285014"
+                target="_blank">
+                <div class="image">
+                    <img src="../assests/images/place-holder-store-locator.png" class="image__img">
+                    <div class="image__overlay ">
+                        <div class="image__title">DELHI</div>
+                        <p class="image__description">
+                            26/27, Opposite KK School and Mayura bakery, Varthur Rd,
+                            Whitefield, Bengaluru<br>
+                            9982947008 </p>
+                    </div>
+                </div>
+                <div class="last_title"><a href="javascript:void(0)">DELHI</a></div>
+            </a>
+        </div>
+        <div style="display:inline-block;width:610px" data-filter="indianorth">
+            <a class="gallery-item" href="https://www.google.com/maps/search/?api=1&query=12.93303195,77.74285014"
+                target="_blank">
+                <div class="image">
+                    <img src="../assests/images/place-holder-store-locator.png" class="image__img">
+                    <div class="image__overlay ">
+                        <div class="image__title">JAIPUR</div>
+                        <p class="image__description">
+                            26/27, Opposite KK School and Mayura bakery, Varthur Rd,
+                            Whitefield, Bengaluru<br>
+                            9982947008 </p>
+                    </div>
+                </div>
+                <div class="last_title"><a href="javascript:void(0)">JAIPUR</a></div>
+            </a>
+        </div>
+        <div style="display:inline-block;width:610px" data-filter="indianorth">
+            <a class="gallery-item" href="https://www.google.com/maps/search/?api=1&query=12.93303195,77.74285014"
+                target="_blank">
+                <div class="image">
+                    <img src="../assests/images/place-holder-store-locator.png" class="image__img">
+                    <div class="image__overlay ">
+                        <div class="image__title">KANPUR</div>
+                        <p class="image__description">
+                            26/27, Opposite KK School and Mayura bakery, Varthur Rd,
+                            Whitefield, Bengaluru<br>
+                            9982947008 </p>
+                    </div>
+                </div>
+                <div class="last_title"><a href="javascript:void(0)">KANPUR</a></div>
+            </a>
+        </div>
+        <div style="display:inline-block;width:610px" data-filter="indiawest">
+            <a class="gallery-item" href="https://www.google.com/maps/search/?api=1&query=12.93303195,77.74285014"
+                target="_blank">
+                <div class="image">
+                    <img src="../assests/images/place-holder-store-locator.png" class="image__img">
+                    <div class="image__overlay ">
+                        <div class="image__title">MUMBAI</div>
+                        <p class="image__description">
+                            26/27, Opposite KK School and Mayura bakery, Varthur Rd,
+                            Whitefield, Bengaluru<br>
+                            9982947008 </p>
+                    </div>
+                </div>
+                <div class="last_title"><a href="javascript:void(0)">MUMBAI</a></div>
+            </a>
+        </div>
+        <div style="display:inline-block;width:610px" data-filter="indiawest">
+            <a class="gallery-item" href="https://www.google.com/maps/search/?api=1&query=12.93303195,77.74285014"
+                target="_blank">
+                <div class="image">
+                    <img src="../assests/images/place-holder-store-locator.png" class="image__img">
+                    <div class="image__overlay ">
+                        <div class="image__title">SURAT</div>
+                        <p class="image__description">
+                            26/27, Opposite KK School and Mayura bakery, Varthur Rd,
+                            Whitefield, Bengaluru<br>
+                            9982947008 </p>
+                    </div>
+                </div>
+                <div class="last_title"><a href="javascript:void(0)">SURAT</a></div>
+            </a>
+        </div>
+        <div style="display:inline-block;width:610px" data-filter="indiawest">
+            <a class="gallery-item" href="https://www.google.com/maps/search/?api=1&query=12.93303195,77.74285014"
+                target="_blank">
+                <div class="image">
+                    <img src="../assests/images/place-holder-store-locator.png" class="image__img">
+                    <div class="image__overlay ">
+                        <div class="image__title">AHEMDABAD</div>
+                        <p class="image__description">
+                            26/27, Opposite KK School and Mayura bakery, Varthur Rd,
+                            Whitefield, Bengaluru<br>
+                            9982947008 </p>
+                    </div>
+                </div>
+                <div class="last_title"><a href="javascript:void(0)">AHEMDABAD</a></div>
+            </a>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div style="background-color :#29293a;clear: both;">
+        <div style="width:40%;float:left;margin: 100px 130px 100px 120px">
+            <h1 style="text-align:left">LAUNDROKART</h1>
+            <p style="color:white;font-size: 24px;">
+                Kleenco On Demand Services Pvt Ltd,
+                <br>
+                First Floor, SY 167/3, Chickbegur Village, Singasandra Post Hosur Road,Manipal County Rd, Begur,
+                Bengaluru-560068, Karnataka.
+            </p>
+
+            <br><br><br>
+
+            <img src="../assests/images/crown.png" alt=""
+                style="float:left;width:55px;height:45px;margin: 0px 40px 0px 0px ;">
+            <h1 style="display:inline-block;clear: both;">FOUNDING MEMBER</h1>
+            <br><br><br><br>
+            <img src="../assests/images/DLAI.png" alt=""
+                style="float:left;width:195px;height:70px;margin: 0px 40px 0px 0px ;">
+            <h1 style="text-align:left">DRY CLEANER'S & LAUNDERERS ASSOCIATION OF INDIA</h1>
+        </div>
+
+        <div style="width:40%;float:left;margin-top:100px;">
+            <h1 style="text-align:left">SUPPORT</h1>
+            <p style="color:white;font-size:24px;">We have advanced our Customer Support from calls to emails. For any
+                queries, email us at wecare [@]
+                LaundroKart.com
+            </p>
+
+            <br><br><br><br>
+
+            <i class='fas fa-phone' style="color:hotpink;float: left;height:100px;margin-right:20px;"></i>
+            <p style="color:white;font-size:24px;">We have advanced our Customer Support from calls to emails. For any
+                queries, email us at wecare [@]
+                LaundroKart.com
+            </p>
+
+            <br><br>
+
+            <i class="fa fa-calendar" style="clear:both;color:hotpink;float: left;height:30px;margin-right:20px;"></i>
+            <p style="color:white;font-size:24px;">9:30 AM TO 9:30 PM
+                <br>
+                STORES CLOSED ON SUNDAY
+            </P>
+        </div>
+
+        <div style="padding:0px 100px;clear:both;">
+            <hr>
+        </div>
+
+        <h1 style="margin-top: 100px;font-size: 40px;">LAUNDROKART NEAR YOU</h1>
+
+        <table style="padding:50px 100px;margin-left: 220px;margin-top: -50px;">
+            <tr>
+                <td style="width:5%;">
+                    <ul class="last">
+                        <li>MUMBAI</li>
+                        <li>DELHI</li>
+                        <li>BENGALORE</li>
+                        <li>HYDRABAD</li>
+                        <li>AHEMDABAD</li>
+                        <li>CHENNAI</li>
+                        <li>KOLKATA</li>
+                        <li>SURAT</li>
+                        <li>PUNE</li>
+                        <li>JAIPUR</li>
+                    </ul>
+                </td>
+                <td style="width:5%;">
+                    <ul class="last">
+                        <li>LUCKNOW</li>
+                        <li>KANPUR</li>
+                        <li>NAGPUR</li>
+                        <li>INDORE</li>
+                        <li>THANE</li>
+                        <li>BHOPAL</li>
+                        <li>VISAKHAPATANAM</li>
+                        <li>PTANA</li>
+                        <li>VADODARA</li>
+                        <li>GHAZIABAD</li>
+                    </ul>
+                </td>
+                <td style="width:5%;">
+                    <ul class="last">
+                        <li>LUDHIYANA</li>
+                        <li>AGRA</li>
+                        <li>NASHIK</li>
+                        <li>RAJKOT</li>
+                        <li>SRINAGAR</li>
+                        <li>RANCHI</li>
+                        <li>JAMNAGAR</li>
+                        <li>COIMBATORE</li>
+                        <li>KOTA</li>
+                        <li>GUWAHATI</li>
+                    </ul>
+                </td>
+                <td style="width:5%;">
+                    <ul class="last">
+                        <li>HUBALI</li>
+                        <li>BHUBANESWAR</li>
+                        <li>BHIWANDI</li>
+                        <li>BIKANER</li>
+                        <li>AMRAVATI</li>
+                        <li>KOCHI</li>
+                        <li>UJJAIN</li>
+                        <li>AKOLA</li>
+                        <li>UDAIPUR</li>
+                        <li>JAMMU</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <div style="text-align:center;color:white;font-size:30px;padding-top:50px;height:100px;">© 2022 Laundrokart. All
+            Rights Reserved.
+        </div>
+
+    </div>
+
+</body>
+
+</html>

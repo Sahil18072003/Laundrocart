@@ -1,0 +1,367 @@
+<html>
+
+<head>
+    <title>
+        <%= `LaundroKart.com` %>
+    </title>
+    <style>
+        /* navbar */
+        * {
+            margin: 0%;
+            padding: 0px;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            height: 100px;
+        }
+
+        li {
+            list-style: none;
+            margin: auto;
+            text-align: center;
+        }
+
+        a {
+            font-size: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-decoration: none;
+            color: #551A8B;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            border: 0px solid;
+            background-color: #ed1c94;
+            border-radius: 25px;
+            padding: 15px;
+        }
+
+        .dropbtn {
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* from img */
+        img {
+            width: 100%;
+        }
+
+        /* our services css */
+        h1 {
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            margin: 0px 0px 20px 0px;
+        }
+
+        h3 {
+            height: 300px;
+            padding: 60px;
+            color: white;
+            opacity: 0.6;
+        }
+
+        .info {
+            padding: 0px 5%;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .info div:hover {
+            background-color: blueviolet;
+        }
+
+        .info div {
+            width: 380px;
+            border: 1px solid white;
+            border-radius: 20px;
+            float: left;
+            margin: 20px;
+            font-size: 25px;
+        }
+
+        /* footer css */
+        div img {
+            margin: 30px;
+            width: 100px;
+            height: 100px;
+        }
+
+        /* in footer laundrokart near you */
+        .last {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            font-size: 23px;
+            margin-top: 20px;
+            width: 100px;
+            height: fit-content;
+        }
+
+        .last li {
+            margin: 5px;
+            text-align: left;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<body style="background-color:#29293a ;">
+
+    <div style="background-color:rgb(250, 250, 250);height: 100px;">
+        <ul>
+            <li style="margin: 0px 25px 0px 0px;"><img src="/assests/images/logo.png" alt="" style="width: 260px;"></li>
+            <!-- <li><a href="/offer">OFFERS</a></li> -->
+            <li><a href="/price_lists">PRICE LISTS</a></li>
+            <li><a href="/store_locator">STORE LOCATER</a></li>
+            <li><a href="/team">TEAM</a></li>
+            <li><a href="/franchisee">FRANCHISEE</a></li>
+            <li><button><a href="/ScheduleWash" style="text-decoration:none">SCHEDULE A WASH</a></button></li>
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="" style="text-decoration:none">LOGIN/REGISTER</a></button>
+                    <div class="dropdown-content">
+                        <a href="/login">LOGIN</a>
+                        <a href="/register">REGISTER</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <img src="/assests/images/banner1.jpg" style="width:99vw;height:80vh;margin:0px" alt="Sorry">
+    </div>
+
+    <h1 style="margin:30px;font-size:80px;text-decoration: rgb(231, 88, 112) underline;">OUR SERVICES</h1>
+
+    <!-- our services pages -->
+    <div class="info">
+
+        <div>
+            <img src="../assests/images/our1.svg" alt="">
+            <h1>5 Star Dry Cleaning</h1>
+            <hr>
+            <h3>LaundroKart partnered with luxury 5-Star hotels who have best Laundry facilities and Experts who are
+                trained to handle sensitive, expensive fabric.</h3>
+        </div>
+
+        <div>
+            <img src="../assests/images/our2.svg" alt="">
+            <h1>Dry Cleaning</h1>
+            <hr>
+            <h3>Dry cleaning is a process where garments are cleaned using a chemical solvent. We use Hydro Carbon
+                machine, to process your Delicate garments!</h3>
+        </div>
+
+        <div>
+            <img src="../assests/images/our3.svg" alt="">
+            <h1>Shoe Laundry</h1>
+            <hr>
+            <h3>LaundroKart expert shoe laundry service will transform your soiled shoe into a brand new one. We can
+                handle all variants of shoes. For more info: Shoe Laundry</h3>
+        </div>
+
+        <div>
+            <img src="../assests/images/our4.svg" alt="">
+            <h1>Carpet Cleaning</h1>
+            <hr>
+            <h3>LaundroKart carpet cleaning professionals are equipped with the state-of-the-art industrial machinery to
+                provide you the best service.</h3>
+        </div>
+
+        <div>
+            <img src="../assests/images/price list/Wash and Iron.png" alt="">
+            <h1>Wash And Iron</h1>
+            <hr>
+            <h3>Garments are processed using 100% bio-degradable detergents. Ideal for daily, gym & casual wear.
+                Rs.99/KG for Wash & Iron.</h3>
+        </div>
+
+        <div>
+            <img src="../assests/images/wash-and-fold.svg" alt="">
+            <h1>Wash And Fold</h1>
+            <hr>
+            <h3>Garments are processed using 100% bio-degradable detergents. Ideal for daily, gym & casual wear.
+                Rs.75/KG for Wash & Fold.</h3>
+        </div>
+
+        <div>
+            <img src="../assests/images/steam-iroining.svg" alt="">
+            <h1>Steam Ironing</h1>
+            <hr>
+            <h3>LaundroKart uses Steam Ironing Machines to ensure minimal exposure to heat and intact softness of
+                clothes.</h3>
+        </div>
+
+        <div>
+            <img src="../assests/images/darning.svg" alt="">
+            <h1>Darning</h1>
+            <hr>
+            <h3>Why discard your precious garments just because they are torn? Our fabric experts can darn the damages
+                and hide it in such a way that they will be unnoticeable.</h3>
+        </div>
+
+    </div>
+
+    <div style="padding:0px 100px;clear:both;">
+        <hr>
+    </div>
+
+    <!-- footer -->
+    <div style="background-color :#29293a;clear: both;">
+        <div style="width:40%;float:left;margin: 100px 130px 100px 120px">
+            <h1 style="text-align:left">LAUNDROKART</h1>
+            <p style="color:white;font-size: 24px;">
+                Kleenco On Demand Services Pvt Ltd,
+                <br>
+                First Floor, SY 167/3, Chickbegur Village, Singasandra Post Hosur Road,Manipal County Rd, Begur,
+                Bengaluru-560068, Karnataka.
+            </p>
+
+            <br><br><br>
+
+            <img src="../assests/images/crown.png" alt=""
+                style="float:left;width:55px;height:45px;margin: 0px 40px 0px 0px ;">
+            <h1 style="display:inline-block;clear: both;">FOUNDING MEMBER</h1>
+            <br><br><br><br>
+            <img src="../assests/images/DLAI.png" alt=""
+                style="float:left;width:195px;height:70px;margin: 0px 40px 0px 0px ;">
+            <h1 style="text-align:left">DRY CLEANER'S & LAUNDERERS ASSOCIATION OF INDIA</h1>
+        </div>
+
+        <div style="width:40%;float:left;margin-top:100px;">
+            <h1 style="text-align:left">SUPPORT</h1>
+            <p style="color:white;font-size:24px;">We have advanced our Customer Support from calls to emails. For any
+                queries, email us at wecare [@]
+                LaundroKart.com
+            </p>
+
+            <br><br><br><br>
+
+            <i class='fas fa-phone' style="color:hotpink;float: left;height:100px;margin-right:20px;"></i>
+            <p style="color:white;font-size:24px;">We have advanced our Customer Support from calls to emails. For any
+                queries, email us at wecare [@]
+                LaundroKart.com
+            </p>
+
+            <br><br>
+
+            <i class="fa fa-calendar" style="clear:both;color:hotpink;float: left;height:30px;margin-right:20px;"></i>
+            <p style="color:white;font-size:24px;">9:30 AM TO 9:30 PM
+                <br>
+                STORES CLOSED ON SUNDAY
+            </P>
+        </div>
+
+        <div style="padding:0px 100px;clear:both;">
+            <hr>
+        </div>
+
+        <h1 style="margin-top: 100px;font-size: 40px;">LAUNDROKART NEAR YOU</h1>
+
+        <table style="padding:50px 100px;margin-left: 220px;margin-top: 45px;">
+            <tr>
+                <td style="width:5%;">
+                    <ul class="last">
+                        <li>MUMBAI</li>
+                        <li>DELHI</li>
+                        <li>BENGALORE</li>
+                        <li>HYDRABAD</li>
+                        <li>AHEMDABAD</li>
+                        <li>CHENNAI</li>
+                        <li>KOLKATA</li>
+                        <li>SURAT</li>
+                        <li>PUNE</li>
+                        <li>JAIPUR</li>
+                    </ul>
+                </td>
+                <td style="width:5%;">
+                    <ul class="last">
+                        <li>LUCKNOW</li>
+                        <li>KANPUR</li>
+                        <li>NAGPUR</li>
+                        <li>INDORE</li>
+                        <li>THANE</li>
+                        <li>BHOPAL</li>
+                        <li>VISAKHAPATANAM</li>
+                        <li>PTANA</li>
+                        <li>VADODARA</li>
+                        <li>GHAZIABAD</li>
+                    </ul>
+                </td>
+                <td style="width:5%;">
+                    <ul class="last">
+                        <li>LUDHIYANA</li>
+                        <li>AGRA</li>
+                        <li>NASHIK</li>
+                        <li>RAJKOT</li>
+                        <li>SRINAGAR</li>
+                        <li>RANCHI</li>
+                        <li>JAMNAGAR</li>
+                        <li>COIMBATORE</li>
+                        <li>KOTA</li>
+                        <li>GUWAHATI</li>
+                    </ul>
+                </td>
+                <td style="width:5%;">
+                    <ul class="last">
+                        <li>HUBALI</li>
+                        <li>BHUBANESWAR</li>
+                        <li>BHIWANDI</li>
+                        <li>BIKANER</li>
+                        <li>AMRAVATI</li>
+                        <li>KOCHI</li>
+                        <li>UJJAIN</li>
+                        <li>AKOLA</li>
+                        <li>UDAIPUR</li>
+                        <li>JAMMU</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <div style="text-align:center;color:white;font-size:30px;padding-top:50px;height:100px;">© 2022 Laundrokart. All
+            Rights Reserved.</div>
+
+    </div>
+
+</body>
+
+</html>

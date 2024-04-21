@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        width: 40%;
+        height: 40%;
+        margin: auto;
+        background-color: #eee7e7;
+    }
+
+    * {
+        box-sizing: border-box;
+        font-size: 20px;
+    }
+
+    /* Add padding to containers */
+    .container {
+        padding: 16px;
+        background-color: white;
+    }
+
+    /* Full-width input fields */
+    input[type=text],input[type=email],input[type=number],textarea,
+    input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    input[type=text]:focus,input[type=email]:focus,input[type=number]:focus,textarea:focus,
+    input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    /* Overwrite default styles of hr */
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+    /* Set a style for the submit button */
+    .registerbtn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    .registerbtn:hover {
+        opacity: 1;
+    }
+
+    /* Add a blue text color to links */
+    a {
+        color: dodgerblue;
+    }
+
+    /* Set a grey background color and center the text of the "sign in" section */
+    .signin {
+        background-color: #f1f1f1;
+        text-align: center;
+    }
+</style>
+
+<body>
+
+    <form action="/create" method="POST" autocomplete="off">
+        <div class="container">
+            <h1 style="text-align: center;font-size:25px;">Register</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+            <label for="">Name</label>
+            <input type="text" name="name" placeholder="Enter Your Name" required>
+
+            <label for="">Email</label>
+            <input type="email" name="email" placeholder="Enter Your Email" required>
+
+            <label for="">Password</label>
+            <input type="password" name="password" placeholder="Enter Your Password" required>
+
+            <label for="">Confirm Password</label>
+            <input type="password" name="confirm_password" placeholder="Enter Confirm Password" required>
+
+            <label for="">Address</label>
+            <textarea name="address"  rows="4" placeholder="Enter Your Address" required></textarea>
+
+            <label for="">Phone</label>
+            <input type="number" name="phone" placeholder="Enter Your Phone no" required>
+
+            <button type="submit" class="registerbtn">Register</button>
+
+            <div class="container signin">
+                <p>Already have an account? <a href="/login">Sign in</a>.</p>
+            </div>
+
+        </div>
+    </form>
+
+</body>
+</html>

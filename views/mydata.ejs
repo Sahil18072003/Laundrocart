@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            font-size: 35px;
+        }
+        button{
+            font-size: 25px;
+            padding: 9px;
+            border-radius: 11px;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+          <td>Name : </td>
+          <td><%- `${User.name}`  %></td>
+        </tr>
+        <tr>
+            <td>Email : </td>
+            <td><%- `${User.email}` %></td>
+        </tr>
+        <tr>
+            <td>Phone : </td>
+            <td><%- `${User.phone}`  %></td>
+        </tr>
+        <tr>
+            <td>Address : </td>
+            <td><%- `${User.address}` %></td>
+        </tr>
+        <tr >
+            <td colspan="3">
+                <p style="color:blue;display: inline-block;">Do You Want To Change It ? </p>
+                <button><a href="/edit_profile">Yes</a></a></button>
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>

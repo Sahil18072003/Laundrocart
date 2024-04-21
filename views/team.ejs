@@ -1,0 +1,343 @@
+<html>
+
+<head>
+
+    <title>
+        <%= title %>
+    </title>
+    <style>
+        /* navbar */
+        * {
+            margin: 0%;
+            padding: 0px;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            height: 100px;
+        }
+
+        li {
+            list-style: none;
+            margin: auto;
+            text-align: center;
+        }
+
+        a {
+            font-size: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-decoration: none;
+            color: #551A8B;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            border: 0px solid;
+            background-color: #ed1c94;
+            border-radius: 25px;
+            padding: 15px;
+        }
+
+        .dropbtn {
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            margin: 0px 0px 20px 0px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 65px;
+            text-decoration: underline purple;
+            color: rgb(255, 1, 200);
+            margin: 0px 0px 20px 0px;
+        }
+
+        h4 {
+            text-align: left;
+            font-size: 30px;
+            color: black;
+            margin: 0px 0px 20px 0px;
+        }
+
+        h3 {
+            height: 300px;
+            padding: 60px;
+            color: white;
+            opacity: 0.6;
+        }
+
+        #centimg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            margin-left: 200px;
+        }
+
+        #centimg div {
+            display: inline-block;
+            width: 260px
+        }
+
+        .div8 {
+            text-align: center;
+            display: inline-block;
+            width: 200px;
+            margin-left: 50px;
+            margin-top: 40px;
+            height: 50px;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .div9 {
+            text-align: center;
+            display: inline-table;
+            width: 200px;
+            margin-left: 50px;
+            height: 50px;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .secondul a {
+            color: white;
+            font-size: 22px;
+        }
+
+        .last {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            font-size: 23px;
+            margin-top: 20px;
+            width: 100px;
+            height: fit-content;
+        }
+
+        .last li {
+            margin: 5px;
+            text-align: left;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<body>
+    <div style="background-color:rgb(250,250,250);">
+        <ul>
+            <li><img src="/assests/images/logo.png" alt=""></li>
+            <!-- <li><a href="/offer">OFFERS</a></li> -->
+            <li><a href="/price_lists">PRICE LISTS</a></li>
+            <li><a href="/store_locator">STORE LOCATER</a></li>
+            <li><a href="/team">TEAM</a></li>
+            <li><a href="/franchisee">FRANCHISEE</a></li>
+            <li><button><a href="/ScheduleWash" style="text-decoration:none">SCHEDULE A WASH</a></button></li>
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="" style="text-decoration:none">LOGIN/REGISTER</a></button>
+                    <div class="dropdown-content">
+                        <a href="/login">LOGIN</a>
+                        <a href="/register">REGISTER</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div style="font-family:Arial, Helvetica, sans-serif">
+        <div>
+            <h2 style="margin-top :35px;"> A PASSIONATE TEAM</h2>
+            <p style="font-size:30px;text-align:center; margin-top: 80px;">With us, all your laundry problems are
+                sorted! We keep finding new ways to keep our customers happy - and by 'we', it's over 50 minds. We are
+                in here in for a long haul, and hell-bent to make Laundrokart a 100 Cr company - with this team, we are
+                almost there! Let's take you through our leadership:</p>
+        </div>
+        <div style="margin-left:50px">
+            <h2 style="text-align: left;margin-top: 80px;">Our credo:</h2>
+            <p style="font-size:30px;">1. Care about our customers</p>
+            <p style="font-size:30px;">2. Aim to be the best</p>
+            <p style="font-size:30px;">3. Improvise, improvise</p>
+        </div>
+    </div>
+
+    <div id="centimg">
+        <div style="display:inline-block;width:600px">
+            <img src="../assests/images/pratham.jpg" alt="" style="width:60%; clip-path: circle();">
+            <div class="div8">PRATHAM DHOBI</div>
+            <div class="div9">FOUNDER</div>
+        </div>
+        <div style="display:inline-block;width:600px">
+            <img src="../assests/images/sahil.jpeg" alt="" style="width:60%; clip-path: circle();">
+            <div class="div8">SAHIL DHARAVIYA</div>
+            <div class="div9">CHIEF EXECUTIVE</div>
+        </div>
+        <div style="display:inline-block;width:600px">
+            <img src="../assests/images/Sanket.jpg" alt="" style="width:60%; clip-path: circle();">
+            <div class="div8" style="margin-top: 20px;">SANKET SHAH</div>
+            <div class="div9">PRODUCT MANAGER</div>
+        </div>
+    </div>
+
+    <!-- FOOter -->
+    <div style="background-color :#29293a;clear: both;">
+        <div style="width:40%;float:left;margin: 100px 130px 100px 120px">
+            <h1 style="text-align:left">LAUNDROKART</h1>
+            <p style="color:white;font-size: 24px;">
+                Kleenco On Demand Services Pvt Ltd,
+                <br>
+                First Floor, SY 167/3, Chickbegur Village, Singasandra Post Hosur Road,Manipal County Rd, Begur,
+                Bengaluru-560068, Karnataka.
+            </p>
+
+            <br><br><br>
+
+            <img src="../assests/images/crown.png" alt=""
+                style="float:left;width:55px;height:45px;margin: 0px 40px 0px 0px ;">
+            <h1 style="display:inline-block;clear: both;">FOUNDING MEMBER</h1>
+            <br><br><br><br>
+            <img src="../assests/images/DLAI.png" alt=""
+                style="float:left;width:195px;height:70px;margin: 0px 40px 0px 0px ;">
+            <h1 style="text-align:left">DRY CLEANER'S & LAUNDERERS ASSOCIATION OF INDIA</h1>
+        </div>
+
+        <div style="width:40%;float:left;margin-top:100px;">
+            <h1 style="text-align:left">SUPPORT</h1>
+            <p style="color:white;font-size:24px;">We have advanced our Customer Support from calls to emails. For any
+                queries, email us at wecare [@]
+                LaundroKart.com
+            </p>
+
+            <br><br><br><br>
+
+            <i class='fas fa-phone' style="color:hotpink;float: left;height:100px;margin-right:20px;"></i>
+            <p style="color:white;font-size:24px;">We have advanced our Customer Support from calls to emails. For any
+                queries, email us at wecare [@]
+                LaundroKart.com
+            </p>
+
+            <br><br>
+
+            <i class="fa fa-calendar" style="clear:both;color:hotpink;float: left;height:30px;margin-right:20px;"></i>
+            <p style="color:white;font-size:24px;">9:30 AM TO 9:30 PM
+                <br>
+                STORES CLOSED ON SUNDAY
+            </P>
+        </div>
+
+        <div style="padding:0px 100px;clear:both;">
+            <hr>
+        </div>
+
+        <h1 style="margin-top: 100px;font-size: 40px;">LAUNDROKART NEAR YOU</h1>
+
+        <table style="padding:50px 100px;margin-left: 220px;">
+            <tr>
+                <td style="width:5%;">
+                    <ul class="last">
+                        <li>MUMBAI</li>
+                        <li>DELHI</li>
+                        <li>BENGALORE</li>
+                        <li>HYDRABAD</li>
+                        <li>AHEMDABAD</li>
+                        <li>CHENNAI</li>
+                        <li>KOLKATA</li>
+                        <li>SURAT</li>
+                        <li>PUNE</li>
+                        <li>JAIPUR</li>
+                    </ul>
+                </td>
+                <td style="width:5%;">
+                    <ul class="last">
+                        <li>LUCKNOW</li>
+                        <li>KANPUR</li>
+                        <li>NAGPUR</li>
+                        <li>INDORE</li>
+                        <li>THANE</li>
+                        <li>BHOPAL</li>
+                        <li>VISAKHAPATANAM</li>
+                        <li>PTANA</li>
+                        <li>VADODARA</li>
+                        <li>GHAZIABAD</li>
+                    </ul>
+                </td>
+                <td style="width:5%;">
+                    <ul class="last">
+                        <li>LUDHIYANA</li>
+                        <li>AGRA</li>
+                        <li>NASHIK</li>
+                        <li>RAJKOT</li>
+                        <li>SRINAGAR</li>
+                        <li>RANCHI</li>
+                        <li>JAMNAGAR</li>
+                        <li>COIMBATORE</li>
+                        <li>KOTA</li>
+                        <li>GUWAHATI</li>
+                    </ul>
+                </td>
+                <td style="width:5%;">
+                    <ul class="last">
+                        <li>HUBALI</li>
+                        <li>BHUBANESWAR</li>
+                        <li>BHIWANDI</li>
+                        <li>BIKANER</li>
+                        <li>AMRAVATI</li>
+                        <li>KOCHI</li>
+                        <li>UJJAIN</li>
+                        <li>AKOLA</li>
+                        <li>UDAIPUR</li>
+                        <li>JAMMU</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <div style="text-align:center;color:white;font-size:30px;padding-top:50px;height:100px;">© 2022 Laundrokart. All
+            Rights Reserved.</div>
+
+    </div>
+
+</body>
+
+</html>

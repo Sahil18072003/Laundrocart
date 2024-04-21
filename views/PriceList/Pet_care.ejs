@@ -1,0 +1,120 @@
+<style>
+  button {
+    width: 90%;  
+    background-color: plum;
+    height: 50px;
+    font-size: 25px;
+    overflow: none !important;
+  }
+
+  #wrapper1,#wrapper2,#wrapper3 {
+    background: peachpuff;
+    overflow:hidden;
+    transition: height 400ms;
+    width: 90%;
+  }
+
+  #list1,#list2,#list3 {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+  }
+
+  p {
+    font-size: 24px;
+  }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<body style="display: flex;flex-direction:column;align-items:center">
+  <button id="button1">Home Care</button>
+  <div id="wrapper2" class="open">
+    <ul id="list2">
+      <li>
+        <form action="/addcart/?name=Sofa Cover Small&price=249" method="POST">
+          <img src="../../assests/images/price list/Sofa Cover Small.png" alt="" name="img">
+          <p name="name">Name : Sofa Cover Small</p>
+          <p name="price">Price : 249</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Sofa Cover&price=350" method="POST">
+          <img src="../../assests/images/price list/Sofa Cover.png" alt="">
+          <p name="name">Name : Sofa Cover Small</p>
+          <p name="price">Price : 350</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Car Seat cover&price=125" method="POST">
+          <img src="../../assests/images/price list/Car Seat cover.png" alt="">
+          <p name="name">Name : Car Seat cover</p>
+          <p name="price">Price : 125</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;">Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Cusion_Cover&price=150" method="POST">
+          <img src="../../assests/images/price list/Cusion_Cover.png" alt="">
+          <p name="name">Name : Cushion Cover</p>
+          <p name="price">Price : 150</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+  
+  <script>
+    $(function (event) {
+      var b1 = $("#button1");
+      var b2 = $("#button2");
+      var b3 = $("#button3");
+      var w1 = $("#wrapper1");
+      var w2 = $("#wrapper2");
+      var w3 = $("#wrapper3");
+      var l1 = $("#list1");
+      var l2 = $("#list2");
+      var l3 = $("#list3");
+  
+      // w.height(l.outerHeight(true));
+  
+      b1.click(function () {
+        if (w1.hasClass('open')) {
+          w1.removeClass('open');
+          w1.height(0);
+        } else {
+          w1.addClass('open');
+          w1.height(l1.outerHeight(true));
+        }
+      });
+
+      b2.click(function () {
+        if (w2.hasClass('open')) {
+          w2.removeClass('open');
+          w2.height(0);
+        } else {
+          w2.addClass('open');
+          w2.height(l2.outerHeight(true));
+        }
+      });
+
+      b3.click(function () {
+        if (w3.hasClass('open')) {
+          w3.removeClass('open');
+          w3.height(0);
+        } else {
+          w3.addClass('open');
+          w3.height(l3.outerHeight(true));
+        }
+      });
+  
+    });
+  </script>
+</body>

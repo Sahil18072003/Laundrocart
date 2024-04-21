@@ -1,0 +1,68 @@
+<style>
+    button {
+      width: 90%;  
+      background-color: plum;
+      height: 50px;
+      font-size: 25px;
+      overflow: none !important;
+    }
+  
+    #wrapper1 {
+      background: peachpuff;
+      overflow:hidden;
+      transition: height 400ms;
+      width: 90%;
+    }
+  
+    #list1 {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      justify-content: space-between;
+    }
+  
+    p {
+      font-size: 24px;
+    }
+  </style>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  
+  <body style="display: flex;flex-direction:column;align-items:center">
+    <button id="button1">Appearels</button>
+    <div id="wrapper1" class="open">
+      <ul id="list1">
+        <li>
+          <form action="/addcart/?name=Wash and Iron&price=99" method="POST">
+            <img src="../../assests/images/price list/Wash and Iron.png" alt="" name="img">
+            <p name="name">Wash & Iron</p>
+            <p name="price">Per KG  99Rs</p>
+            <input type="number" placeholder="Enter Quantity" name="qty" required>
+            <button style="font-size:20px;" >Add To cart</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+    
+    
+    <script>
+      $(function (event) {
+        var b1 = $("#button1");
+        var w1 = $("#wrapper1");
+        var l1 = $("#list1");
+    
+        // w.height(l.outerHeight(true));
+    
+        b1.click(function () {
+          if (w1.hasClass('open')) {
+            w1.removeClass('open');
+            w1.height(0);
+          } else {
+            w1.addClass('open');
+            w1.height(l1.outerHeight(true));
+          }
+        });
+    
+      });
+    </script>
+  </body>

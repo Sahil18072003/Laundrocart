@@ -1,0 +1,12 @@
+*{
+    background-color: black;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li{
+    list-style: none;
+}

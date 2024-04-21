@@ -1,0 +1,3 @@
+{"name":"sanket2003","email":"shahsanket322003@gmail.com","phone":"9157573806","occupation":"student"}
+{"name":"SANKET MUKESHKUMAR SHAH","email":"SHAHSANKET322003@GMAIL.COM","phone":"+919157573806","occupation":""}
+{"name":"chirag","email":"chiragvaghela8469@gmail.com","phone":"09510925404","occupation":"student"}

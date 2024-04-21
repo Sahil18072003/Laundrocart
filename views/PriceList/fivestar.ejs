@@ -1,0 +1,316 @@
+<style>
+  button {
+    width: 90%;  
+    background-color: plum;
+    height: 50px;
+    font-size: 25px;
+    overflow: none !important;
+  }
+
+  #wrapper1,#wrapper2,#wrapper3 {
+    background: peachpuff;
+    overflow:hidden;
+    transition: height 400ms;
+    width: 90%;
+  }
+
+  #list1,#list2,#list3 {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+  }
+
+  p {
+    font-size: 24px;
+  }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<body style="display: flex;flex-direction:column;align-items:center">
+  <button id="button1">Appearels</button>
+  <div id="wrapper1" class="open">
+    <ul id="list1">
+      <li>
+        <form action="/addcart/?name=Apron&price=100" method="POST">
+          <img src="../../assests/images/price list/apron.png" alt="" name="img">
+          <p name="name">Name : Apron</p>
+          <p name="price">Price : 100</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Blouse&price=200" method="POST">
+          <img src="../../assests/images/price list/blouse.png" alt="">
+          <p name="name">Name : Blouse</p>
+          <p name="price">Price : 200</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Dress Long&price=100" method="POST">
+          <img src="../../assests/images/price list/dress long.png" alt="">
+          <p name="name">Name : Dress Long</p>
+          <p name="price">Price : 100</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;">Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Duppata&price=100" method="POST">
+          <img src="../../assests/images/price list/Duppata.png" alt="">
+          <p name="name">Name : Duppata</p>
+          <p name="price">Price : 100</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Shirt&price=100" method="post">
+          <img src="../../assests/images/price list/shirt.png" alt="">
+          <p name="name">Name : Shirt</p>
+          <p name="price">Price : 100</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=T-Shirt&price=100" method="post">
+          <img src="../../assests/images/price list/T-shirt.png" alt="">
+          <p name="name">Name : T-Shirt</p>
+          <p name="price">Price : 100</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;">Add To cart</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+
+  <div style="height:20px;width:100%;"></div>
+  
+  <button id="button2">Linens</button>
+  <div id="wrapper2" class="open">
+    <ul id="list2">
+      <li>
+        <form action="/addcart/?name=Bedsheet Double&price=500" method="POST">
+          <img src="../../assests/images/price list/Badsheet_double.png" alt="" name="img">
+          <p name="name"> <b>Name :</b>Bedsheet Double</p>
+          <p name="price">Price : 500</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Badsheet_single&price=300" method="POST">
+          <img src="../../assests/images/price list/Badsheet_single.png" alt="">
+          <p name="name"><b>Name :</b>Badsheet_single</p>
+          <p name="price">Price : 300</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Blanket&price=600" method="POST">
+          <img src="../../assests/images/price list/Blanket.png" alt="">
+          <p name="name"><b>Name :</b>Blanket</p>
+          <p name="price">Price : 600</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;">Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Cusion_Cover&price=150" method="POST">
+          <img src="../../assests/images/price list/Cusion_Cover.png" alt="">
+          <p name="name"><b>Name :</b>Cushion Cover</p>
+          <p name="price">Price : 150</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Pillow Covers&price=150" method="post">
+          <img src="../../assests/images/price list/pillow_cover.png" alt="">
+          <p name="name"><b>Name :</b>Pillow Covers </p>
+          <p name="price">Price : 150</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+
+  <div style="height:20px;width:100%;"></div>
+
+  <button id="button3">Premium/Wedding Wear</button>
+  <div id="wrapper3" class="open">
+    <ul id="list3">
+      <li>
+        <form action="/addcart/?name=Anarkali Suit - Heavy&price=1000" method="POST">
+          <img src="../../assests/images/price list/Anarkali Suit - Heavy.png" alt="" name="img">
+          <p name="name"><b>Name :</b>Anarkali Suit - Heavy</p>
+          <p name="price">Price : 1000</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+      <!-- <li>
+        <form action="/addcart/?name=Anarkali Suit - Light&price=600" method="POST">
+          <img src="../../assests/images/price list/Anarkali Suit - Light.png" alt="">
+          <p name="name">Name : Anarkali Suit - Light</p>
+          <p name="price">Price : 600</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li> -->
+      <li>
+        <form action="/addcart/?name=Lehenga Set&price=1000" method="POST">
+          <img src="../../assests/images/price list/Lehenga Set.png" alt="">
+          <p name="name">Name : Lehenga Set</p>
+          <p name="price">Price : 1000</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;">Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Saree(Designer) - Heavy&price=750" method="POST">
+          <img src="../../assests/images/price list/Saree(Designer) - Heavy.png" alt="">
+          <p name="name">Name : Saree(Designer) - Heav</p>
+          <p name="price">Price : 750</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Saree(Designer) - Light&price=650" method="post">
+          <img src="../../assests/images/price list/Saree(Designer) - Light.png" alt="">
+          <p name="name">Name : Saree(Designer) - Light</p>
+          <p name="price">Price : 650</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Sherwani&price=600" method="post">
+          <img src="../../assests/images/price list/Sherwani.png" alt="">
+          <p name="name">Name : Sherwani</p>
+          <p name="price">Price : 600</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Suit 2 pc&price=500" method="post">
+          <img src="../../assests/images/price list/Suit 2 pc.png" alt="">
+          <p name="name">Name : Suit 2 pc</p>
+          <p name="price">Price : 500</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Suit 2 pc&price=500" method="post">
+          <img src="../../assests/images/price list/Suit 2 pc.png" alt="">
+          <p name="name">Name : Suit 2 pc</p>
+          <p name="price">Price : 500</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Suit 2 pc&price=500" method="post">
+          <img src="../../assests/images/price list/Suit 2 pc.png" alt="">
+          <p name="name">Name : Suit 2 pc</p>
+          <p name="price">Price : 500</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+
+  <div style="height:20px;width:100%;"></div>
+
+  <button id="button3">Wollens/Silks</button>
+  <div id="wrapper3" class="open">
+    <ul id="list3">
+      <li>
+        <form action="/addcart/?name=Scarf&price=150" method="POST">
+          <img src="../../assests/images/price list/Scarf.png" alt="">
+          <p name="name">Name : Saree(Designer) - Heav</p>
+          <p name="price">Price : 750</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Jacket&price=400" method="post">
+          <img src="../../assests/images/price list/Jacket.png" alt="">
+          <p name="name">Name : Saree(Designer) - Light</p>
+          <p name="price">Price : 650</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+      <li>
+        <form action="/addcart/?name=Shawl&price=250" method="post">
+          <img src="../../assests/images/price list/Shawl.png" alt="">
+          <p name="name">Name : Sherwani</p>
+          <p name="price">Price : 600</p>
+          <input type="number" placeholder="Enter Quantity" name="qty" required>
+          <button style="font-size:20px;" >Add To cart</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+  
+  
+  <script>
+    $(function (event) {
+      var b1 = $("#button1");
+      var b2 = $("#button2");
+      var b3 = $("#button3");
+      var w1 = $("#wrapper1");
+      var w2 = $("#wrapper2");
+      var w3 = $("#wrapper3");
+      var l1 = $("#list1");
+      var l2 = $("#list2");
+      var l3 = $("#list3");
+  
+      // w.height(l.outerHeight(true));
+  
+      b1.click(function () {
+        if (w1.hasClass('open')) {
+          w1.removeClass('open');
+          w1.height(0);
+        } else {
+          w1.addClass('open');
+          w1.height(l1.outerHeight(true));
+        }
+      });
+
+      b2.click(function () {
+        if (w2.hasClass('open')) {
+          w2.removeClass('open');
+          w2.height(0);
+        } else {
+          w2.addClass('open');
+          w2.height(l2.outerHeight(true));
+        }
+      });
+
+      b3.click(function () {
+        if (w3.hasClass('open')) {
+          w3.removeClass('open');
+          w3.height(0);
+        } else {
+          w3.addClass('open');
+          w3.height(l3.outerHeight(true));
+        }
+      });
+  
+    });
+  </script>
+</body>

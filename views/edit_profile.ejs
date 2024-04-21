@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <style>
+            input{
+                text-indent: 10px;
+                width:500px;
+                height:40px;
+                border-radius: 10px;
+                font-size: 25px;
+                margin: 20px;
+            }
+            button{
+                width: 150px;
+                height: 40px;
+                margin: 20px;
+                font-size: 25px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        
+        <form action="/change_data"   style="display: flex;flex-direction: column;align-items: start;font-size: 20px;" method="post">
+    
+            <input type="text" placeholder="NAME" name="name">
+            
+            <div style="text-indent: 20px;">
+                <label for="" >MALE</label>
+                <input type="radio" style="width:50px;height:20px;margin: 10px;">
+                <label for="" >FEMALE</label>
+                <input type="radio" style="width:50px;height:20px;margin:10px;">
+            </div>
+    
+            <input type="text" name="phone" id="" placeholder="Phone" >
+    
+            <input type="text" name="address" placeholder="House No/Flat No/Floor/Street">
+            <input type="text" placeholder="Landmark(optional)">
+            
+            <h3>Tag This Location For Later</h3>
+            <div style="text-indent:20px;">
+                <label for="" >HOME</label>
+                <input type="radio"  style="width:50px;height:20px;margin: 10px;">
+                <label for="" >OFFICE</label>
+                <input type="radio"  style="width:50px;height:20px;margin:10px;">
+                <label for="" >OTHERS</label>
+                <input type="radio"  style="width:50px;height:20px;margin:10px;">
+            </div>
+    
+            <div>
+                <button type="Submit" >Submit</button>
+                <button type="reset" >Cancel</button>
+            </div>
+    
+            <h1 style="font-size:30px;"> <%- ` ${text} ` %> </h1>
+        
+        </form>
+
+    </body>
+    
+</html>
